@@ -15,12 +15,13 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:passwordToggleEnabled="true"
+
         android:hint="Login"
         app:boxCornerRadiusTopStart="9dp"
         app:boxCornerRadiusTopEnd="9dp"
         app:boxCornerRadiusBottomStart="9dp"
         app:boxCornerRadiusBottomEnd="9dp"
+
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         >
 
@@ -44,6 +45,8 @@
         app:boxCornerRadiusTopEnd="9dp"
         app:boxCornerRadiusBottomStart="9dp"
         app:boxCornerRadiusBottomEnd="9dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="15"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         >
 
@@ -63,7 +66,19 @@
         android:layout_marginTop="25dp"
         android:id="@+id/button1"
         android:text="Log in"
+        android:textColor="@color/white"
+        android:background="@drawable/buttonbackground"
         ></androidx.appcompat.widget.AppCompatButton>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:layout_gravity="end"
+        android:layout_margin="15dp"
+        ></TextView>
+
+
 
 
 
