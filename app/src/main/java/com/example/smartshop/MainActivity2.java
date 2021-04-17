@@ -15,7 +15,7 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
+//pzds
         button=findViewById(R.id.buttonregister);
         textInputEditText1=findViewById(R.id.edittext11);
         textInputEditText2=findViewById(R.id.edittext22);
