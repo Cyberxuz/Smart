@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "858655688384",
+    "project_id": "online-magazin-5aba0",
+    "storage_bucket": "online-magazin-5aba0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858655688384:android:aeeb9a9cbbe6dc55f54f25",
+        "android_client_info": {
+          "package_name": "com.example.smartshop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "858655688384-ebo527hf3i64518935n21brsq3vrmt4n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.smartshop",
+            "certificate_hash": "c83d5c013979ce4626e6f2186cad333d82d8ed83"
+          }
+        },
+        {
+          "client_id": "858655688384-v5r33tg5ksfa619kv416mgg1ihoivdqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAutpFnnJ97Hfiikmv5yGfAb2rtHvfz7a0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "858655688384-v5r33tg5ksfa619kv416mgg1ihoivdqi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
