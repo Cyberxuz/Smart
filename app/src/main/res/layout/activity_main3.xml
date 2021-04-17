@@ -7,6 +7,40 @@
     android:orientation="vertical"
     tools:context=".MainActivity3">
 
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_500"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/backet"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:src="@drawable/orva"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="20dp"
+                ></ImageView>
+
+            <TextView
+                android:id="@+id/textviewprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_baseline_lens_24"
+                android:textColor="@color/white"
+                android:gravity="center"
+
+                ></TextView>
+        </RelativeLayout>
+    </Toolbar>
+
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
