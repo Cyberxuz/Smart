@@ -2,29 +2,25 @@ package com.example.smartshop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
+
+import com.google.android.material.textfield.TextInputEditText;
 
 public class MainActivity2 extends AppCompatActivity {
 
+    TextInputEditText textInputEditText1,textInputEditText2,textInputEditText3,textInputEditText4,textInputEditText5;
     Button button;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        button=findViewById(R.id.button1);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity2.this,MainActivity.class));
-                finish();
-                Toast.makeText(MainActivity2.this, "Added", Toast.LENGTH_SHORT).show();
-            }
-        });
+        button=findViewById(R.id.buttonregister);
+        textInputEditText1=findViewById(R.id.edittext11);
+        textInputEditText2=findViewById(R.id.edittext22);
+        textInputEditText3=findViewById(R.id.edittext33);
+        textInputEditText4=findViewById(R.id.edittext44);
+        textInputEditText5=findViewById(R.id.edittext55);
     }
 }
