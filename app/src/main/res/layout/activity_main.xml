@@ -71,6 +71,8 @@
         ></androidx.appcompat.widget.AppCompatButton>
 
     <TextView
+        android:onClick="registerr"
+        android:id="@+id/textviewregister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
