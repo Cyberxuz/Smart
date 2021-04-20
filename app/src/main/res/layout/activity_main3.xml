@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/drawerlayout"
     tools:context=".MainActivity3">
 
     <LinearLayout
@@ -22,6 +23,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <ImageView
+                    android:id="@+id/drawermenu"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_baseline_menu_open_24"
+
+                    android:layout_marginRight="20dp"
+                    ></ImageView>
                 <ImageView
                     android:id="@+id/backet"
                     android:layout_width="30dp"

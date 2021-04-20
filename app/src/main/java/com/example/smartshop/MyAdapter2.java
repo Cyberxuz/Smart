@@ -5,8 +5,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,6 +20,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
     Context context;
     ArrayList<Integer> integerArrayList;
     ArrayList<String > stringArrayList;
+    int a=0;
 
     public MyAdapter2(Context context, ArrayList<Integer> integerArrayList, ArrayList<String> stringArrayList) {
         this.context = context;
@@ -54,6 +57,19 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
             }
         });
 
+        holder.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                MainActivity3 mainActivity3= (MainActivity3) v.getContext();
+                mainActivity3.textView.setVisibility(View.VISIBLE);
+                a++;
+                mainActivity3.textView.setText(a+"");
+                Toast.makeText(context, "ishlidi axir", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 
     @Override
@@ -65,11 +81,13 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
 
         ImageView imageView;
         TextView textView;
+        Button button;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             textView=itemView.findViewById(R.id.textviewproductnameeeeee);
             imageView=itemView.findViewById(R.id.imageviewproduct2);
 
+            button=itemView.findViewById(R.id.buttonorder);
 
         }
     }

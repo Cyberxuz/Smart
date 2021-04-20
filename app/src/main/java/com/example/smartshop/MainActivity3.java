@@ -1,11 +1,13 @@
 package com.example.smartshop;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,6 +26,9 @@ public class MainActivity3 extends AppCompatActivity {
     ImageView imageView;
     TextView textView;
 
+    DrawerLayout drawerLayout;
+    ImageView imageView1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +36,20 @@ public class MainActivity3 extends AppCompatActivity {
         recyclerView=findViewById(R.id.recyclerview1);
         recyclerView2=findViewById(R.id.recyclerview2);
 
+        drawerLayout=findViewById(R.id.drawerlayout);
+
+        imageView1=findViewById(R.id.drawermenu);
+        imageView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
+
+
         textView=findViewById(R.id.textviewprice);
         imageView=findViewById(R.id.backet);
+
         textView.setVisibility(View.INVISIBLE);
 
         integerArrayList=new ArrayList<>();
