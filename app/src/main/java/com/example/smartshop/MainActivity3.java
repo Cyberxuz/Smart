@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -49,7 +50,12 @@ public class MainActivity3 extends AppCompatActivity {
 
         textView=findViewById(R.id.textviewprice);
         imageView=findViewById(R.id.backet);
-
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity3.this,MainActivity4.class));
+            }
+        });
         textView.setVisibility(View.INVISIBLE);
 
         integerArrayList=new ArrayList<>();

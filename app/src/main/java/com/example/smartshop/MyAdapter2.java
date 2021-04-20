@@ -2,6 +2,7 @@ package com.example.smartshop;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,9 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
     ArrayList<Integer> integerArrayList;
     ArrayList<String > stringArrayList;
     int a=0;
+
+    ArrayList<String> zakazarraylistname;
+    ArrayList<Integer> zakazarraylistimage;
 
     public MyAdapter2(Context context, ArrayList<Integer> integerArrayList, ArrayList<String> stringArrayList) {
         this.context = context;
@@ -57,6 +61,8 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
             }
         });
 
+        zakazarraylistimage=new ArrayList<>();
+        zakazarraylistname=new ArrayList<>();
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,6 +71,19 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
                 mainActivity3.textView.setVisibility(View.VISIBLE);
                 a++;
                 mainActivity3.textView.setText(a+"");
+                zakazarraylistname.add(stringArrayList.get(position));
+                zakazarraylistimage.add(integerArrayList.get(position));
+                mainActivity3.imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent=new Intent(context,MainActivity4.class);
+                        intent.putExtra("oktam",zakazarraylistname);
+                        intent.putExtra("oktam2",zakazarraylistimage);
+
+
+                        context.startActivity(intent);
+                    }
+                });
                 Toast.makeText(context, "ishlidi axir", Toast.LENGTH_SHORT).show();
             }
         });
