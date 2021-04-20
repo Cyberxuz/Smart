@@ -5,10 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -35,9 +40,21 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        DatabaseReference databaseReference;
+        databaseReference= FirebaseDatabase.getInstance().getReference().child("Buyurtmalar");
+
 
         holder.textView.setText(stringArrayList.get(position).toString());
         holder.imageView.setImageResource(integerArrayList.get(position));
+        holder.numberPicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Zakaz zakaz=new Zakaz();
+                zakaz.setNomi(stringArrayList.toString());
+                databaseReference.push().setValue(zakaz);
+                Toast.makeText(context, "Buyurtma berildi", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -50,10 +67,16 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
 
         ImageView imageView;
         TextView textView;
+        NumberPicker numberPicker;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             textView=itemView.findViewById(R.id.textviewzakaz1);
             imageView=itemView.findViewById(R.id.imageviewzakaz1);
+            numberPicker=itemView.findViewById(R.id.numberpicker);
+            numberPicker.setMaxValue(30);
+            numberPicker.setMinValue(1);
+            numberPicker.setValue(1);
+
 
 
         }

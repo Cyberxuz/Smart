@@ -19,6 +19,11 @@
                 android:layout_height="120dp"
                 android:id="@+id/imageviewzakaz1"
                 ></ImageView>
+            <NumberPicker
+                android:id="@+id/numberpicker"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"></NumberPicker>
 
             <TextView
                 android:id="@+id/textviewzakaz1"

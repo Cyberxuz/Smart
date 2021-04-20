@@ -26,6 +26,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
     ArrayList<String> zakazarraylistname;
     ArrayList<Integer> zakazarraylistimage;
 
+
     public MyAdapter2(Context context, ArrayList<Integer> integerArrayList, ArrayList<String> stringArrayList) {
         this.context = context;
         this.integerArrayList = integerArrayList;
@@ -43,7 +44,8 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
+        zakazarraylistimage=new ArrayList<Integer>();
+        zakazarraylistname=new ArrayList<String >();
         holder.textView.setText(stringArrayList.get(position).toString());
         holder.imageView.setImageResource(integerArrayList.get(position));
         holder.imageView.setOnClickListener(new View.OnClickListener() {
@@ -61,8 +63,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
             }
         });
 
-        zakazarraylistimage=new ArrayList<>();
-        zakazarraylistname=new ArrayList<>();
+
         holder.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,6 +91,7 @@ public class MyAdapter2 extends RecyclerView.Adapter<MyAdapter2.MyViewHolder> {
 
 
     }
+
 
     @Override
     public int getItemCount() {

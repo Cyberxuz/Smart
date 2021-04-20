@@ -15,4 +15,13 @@
        android:id="@+id/recyclerview3"
        ></androidx.recyclerview.widget.RecyclerView>
 
+   <androidx.appcompat.widget.AppCompatButton
+       android:id="@+id/buttonbuyurtma"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+      android:background="@drawable/buttonbackground"
+       android:text="Buyurtma"
+       android:textColor="@color/white"
+       ></androidx.appcompat.widget.AppCompatButton>
+
 </LinearLayout>
