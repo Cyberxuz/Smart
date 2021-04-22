@@ -49,10 +49,17 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
         holder.numberPicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Zakaz zakaz=new Zakaz();
-                zakaz.setNomi(stringArrayList.toString());
-                databaseReference.push().setValue(zakaz);
-                Toast.makeText(context, "Buyurtma berildi", Toast.LENGTH_SHORT).show();
+                MainActivity4 mainActivity4= (MainActivity4) v.getContext();
+                mainActivity4.button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Zakaz zakaz=new Zakaz();
+                        zakaz.setNomi(stringArrayList.toString());
+                        zakaz.setSoni(holder.numberPicker.getValue()+"");
+                        databaseReference.push().setValue(zakaz);
+                        Toast.makeText(context, "Buyurtma berildi", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 

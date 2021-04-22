@@ -36,7 +36,7 @@ public class MainActivity4 extends AppCompatActivity {
         Intent intent=getIntent();
         arrayListzakazimage=intent.getIntegerArrayListExtra("oktam2");
 
-       arrayListzakaz= (ArrayList<String>) intent.getSerializableExtra("oktam");
+        arrayListzakaz= (ArrayList<String>) intent.getSerializableExtra("oktam");
 
         MyAdapter3 myAdapter3=new MyAdapter3(this,arrayListzakazimage,arrayListzakaz);
 
