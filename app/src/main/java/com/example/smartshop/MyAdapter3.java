@@ -57,7 +57,7 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
                         zakaz.setNomi(stringArrayList.toString());
                         zakaz.setSoni(holder.numberPicker.getValue()+"");
                         databaseReference.push().setValue(zakaz);
-                        Toast.makeText(context, "Buyurtma berildi", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "Buyurtma berildi axir", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
