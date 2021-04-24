@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     Button button;
 
     FirebaseAuth firebaseAuth;
+
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         if (task.isSuccessful()){
+//                            sharedPreferences=getPreferences(MODE_PRIVATE);
+//                            SharedPreferences.Editor editor=sharedPreferences.edit();
+//                            editor.putString("oktam",textInputEditText1.getText().toString());
+                            //editor.commit();
                             startActivity(new Intent(MainActivity.this,MainActivity3.class));
 
                         }else {
