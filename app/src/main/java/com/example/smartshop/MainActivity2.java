@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,11 +19,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.prefs.Preferences;
+
 public class MainActivity2 extends AppCompatActivity {
 
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
     ProgressBar progressBar;
+
+    SharedPreferences sharedPreferences;
 
     TextInputEditText textInputEditText1,textInputEditText2,textInputEditText3,textInputEditText4,textInputEditText5;
     Button button;
@@ -51,6 +56,12 @@ public class MainActivity2 extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Toast.makeText(MainActivity2.this, "Registratsiya bo`lding axir", Toast.LENGTH_SHORT).show();
+
+
+                        sharedPreferences= getPreferences(MODE_PRIVATE);
+                        SharedPreferences.Editor editor=sharedPreferences.edit();
+                        editor.putString("oktam2",textInputEditText2.getText().toString()+" "+textInputEditText3.getText().toString());
+                        editor.commit();
 
                         UserRegister userRegister=new UserRegister();
                         userRegister.setEmail(textInputEditText1.getText().toString());

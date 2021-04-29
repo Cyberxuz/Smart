@@ -1,6 +1,7 @@
 package com.example.smartshop;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,11 +23,13 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
     Context context;
     ArrayList<Integer> integerArrayList;
     ArrayList<String > stringArrayList;
+    String zakazchik;
 
-    public MyAdapter3(Context context, ArrayList<Integer> integerArrayList, ArrayList<String> stringArrayList) {
+    public MyAdapter3(Context context, ArrayList<Integer> integerArrayList, ArrayList<String> stringArrayList, String zakazchik) {
         this.context = context;
         this.integerArrayList = integerArrayList;
         this.stringArrayList = stringArrayList;
+        this.zakazchik = zakazchik;
     }
 
     @NonNull
@@ -49,10 +52,20 @@ public class MyAdapter3 extends RecyclerView.Adapter<MyAdapter3.MyViewHolder> {
         holder.numberPicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Zakaz zakaz=new Zakaz();
-                zakaz.setNomi(stringArrayList.toString());
-                databaseReference.push().setValue(zakaz);
-                Toast.makeText(context, "Buyurtma berildi", Toast.LENGTH_SHORT).show();
+                MainActivity4 mainActivity4= (MainActivity4) v.getContext();
+                mainActivity4.button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+
+                        Zakaz zakaz=new Zakaz();
+                        zakaz.setAkangni_odi_kim(zakazchik);
+                        zakaz.setNomi(stringArrayList.toString());
+                        zakaz.setSoni(holder.numberPicker.getValue()+"");
+                        databaseReference.push().setValue(zakaz);
+                        Toast.makeText(context, "Buyurtma berildi axir", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 

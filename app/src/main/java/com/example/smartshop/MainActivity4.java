@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -36,9 +37,12 @@ public class MainActivity4 extends AppCompatActivity {
         Intent intent=getIntent();
         arrayListzakazimage=intent.getIntegerArrayListExtra("oktam2");
 
-       arrayListzakaz= (ArrayList<String>) intent.getSerializableExtra("oktam");
+        arrayListzakaz= (ArrayList<String>) intent.getSerializableExtra("oktam");
 
-        MyAdapter3 myAdapter3=new MyAdapter3(this,arrayListzakazimage,arrayListzakaz);
+        SharedPreferences sharedPreferences=getPreferences(MODE_PRIVATE);
+        String  str=sharedPreferences.getString("oktam2","");
+
+        MyAdapter3 myAdapter3=new MyAdapter3(this,arrayListzakazimage,arrayListzakaz,str);
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
