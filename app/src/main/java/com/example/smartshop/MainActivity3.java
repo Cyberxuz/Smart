@@ -1,5 +1,6 @@
 package com.example.smartshop;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -8,10 +9,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
@@ -29,6 +35,7 @@ public class MainActivity3 extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
     ImageView imageView1;
+    NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +51,21 @@ public class MainActivity3 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
+        navigationView=findViewById(R.id.navigationview1);
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()){
+                    case R.id.item1:
+
+                        Toast.makeText(MainActivity3.this, "qwerty", Toast.LENGTH_SHORT).show();break;
+                }
+
+                return true;
             }
         });
 
@@ -92,11 +114,25 @@ public class MainActivity3 extends AppCompatActivity {
 
         recyclerView2.setHasFixedSize(true);
 
+
         recyclerView2.setLayoutManager(new LinearLayoutManager(MainActivity3.this));
         myAdapter2=new MyAdapter2(MainActivity3.this,integerArrayList2,stringArrayList2);
         recyclerView2.setAdapter(myAdapter2);
 
 
+        recyclerView2.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                Toast.makeText(MainActivity3.this, "Mwahahahahah", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                Toast.makeText(MainActivity3.this, "Uxaxaxax", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
 

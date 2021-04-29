@@ -71,13 +71,15 @@
             android:id="@+id/recyclerview2"
             ></androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
-
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationview1"
         android:layout_width="wrap_content"
         android:layout_gravity="start"
         android:layout_height="match_parent"
         app:menu="@menu/menudrawer"
         app:headerLayout="@layout/headerlayout"
         ></com.google.android.material.navigation.NavigationView>
+
+
 
 </androidx.drawerlayout.widget.DrawerLayout>
